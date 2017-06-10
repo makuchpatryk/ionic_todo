@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="secondary">
+
+    <ion-buttons left>
+      <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>  
+    </ion-buttons>
+    <ion-title>
+      Todos!
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item *ngFor="let item of items">{{item.title}}    
+    <button ion-button clear item-right color="danger"(click)="deleteItem(item)">Delete</button>
+    <button ion-button clear item-right (click)="viewItem(item)">View</button></ion-item>
+  </ion-list>
+
+  <ion-fab center bottom>
+    <button ion-fab color="secondary" class="fab_but" (click)="addItem()">+</button>
+  </ion-fab>
+</ion-content>
